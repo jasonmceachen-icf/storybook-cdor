@@ -8,7 +8,7 @@ In `gulpfile.js`, this directory is configured as:
 
 When you run `npx gulp compile` or `npx gulp compileIcons`, these icons are merged into:
 
-`assets/uswds/images/sprite.svg`
+`dist/images/sprite.svg`
 
 By default, custom icons are added alongside the standard USWDS icon set. If `uswds.sprite.projectIconsOnly = true`, only icons from this directory are included.
 
@@ -44,7 +44,7 @@ Also avoid filenames that duplicate default USWDS icon names unless you intentio
 This theme's preprocess currently provides:
 
 - `active_theme_path`
-- `uswds_images` (derived from `active_theme_path` + `/assets/uswds/images/`)
+- `uswds_images` (derived from `active_theme_path` + `/dist/images/`)
 
 For sprite usage in Twig, use `uswds_images` directly. It already contains the full theme-relative image path, so you do not need to concatenate both variables unless you are building a custom path manually.
 
@@ -52,5 +52,5 @@ For sprite usage in Twig, use `uswds_images` directly. It already contains the f
 
 1. Add/update SVG files in this directory.
 2. Run `npx gulp compileIcons`.
-3. Confirm your icon symbol exists in `assets/uswds/images/sprite.svg`.
+3. Confirm your icon symbol exists in `dist/images/sprite.svg`.
 4. Verify it renders with `<use href="...#icon_name">` in your templates.
